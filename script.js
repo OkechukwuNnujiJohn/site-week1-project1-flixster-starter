@@ -17,6 +17,7 @@ const displayMovie = (movie) => {
     const movieTitle = movie.title;
     const posterPath = movie.poster_path;
     const votes = movie.vote_average;
+    const videoId = movie;
   
     //creating a container/ movie card
     const movieContain = document.createElement("div");
@@ -34,6 +35,9 @@ const displayMovie = (movie) => {
         postEle.src = `https://image.tmdb.org/t/p/w500${posterPath}`;
         postEle.classList.add("movie-poster");
         movieContain.appendChild(postEle);
+        postEle.addEventListener("click", () => {
+            playVideo(videoId);
+          });
     }
     
 // checking if the movie votes exist
@@ -53,28 +57,29 @@ const displayMovie = (movie) => {
   };
 
 // Function to play video using embedded YouTube
-/* const playVideo = (videoId) => {
-    const videoUrl = `https://www.youtube.com/embed/${videoId}`;
+const playVideo = (videoId) => {
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    window.open(videoUrl, "_blank");
   
-    // Create a modal or open a new window to display the video
-    // Example modal code:
-    const modal = document.createElement("div");
-    modal.classList.add("modal");
+    // // Create a modal or open a new window to display the video
+    // // Example modal code:
+    // const modal = document.createElement("div");
+    // modal.classList.add("modal");
     
-    const iframe = document.createElement("iframe");
-    iframe.src = videoUrl;
-    iframe.allowFullscreen = true;
+    // const iframe = document.createElement("iframe");
+    // iframe.src = videoUrl;
+    // iframe.allowFullscreen = true;
   
-    modal.appendChild(iframe);
-    document.body.appendChild(modal);
+    // modal.appendChild(iframe);
+    // document.body.appendChild(modal);
   
-    // Close modal when clicked outside
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        document.body.removeChild(modal);
-      }
-    });
-}; */
+    // // Close modal when clicked outside
+    // modal.addEventListener("click", (event) => {
+    //   if (event.target === modal) {
+    //     document.body.removeChild(modal);
+    //   }
+    // });
+}; 
 
 const search = async () => {
     const API_KEY = "6557e9119008b99d3e63f679fd06be41"

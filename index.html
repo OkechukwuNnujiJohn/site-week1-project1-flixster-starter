@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
 </head>
 <body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
     <h1>FLIXSTER</h1>
+
+    <button id="homeBtn" class="btn btn-primary">
+        <i class="fas fa-home"></i></button>
     <h2>Now Playing</h2>
 
     <form>
         <input id ="searchTxt" type="text" placeholder="Search">
         <button id = "searchInput" type="submit">search</button>
     </form>
-    <button id="homeBtn">Home Page</button>
+    
     <div id= "movies"></div>
     <button id="loadBtn">Load More</button>
 
